@@ -1,0 +1,49 @@
+.btn-click {
+  padding: 0.5em;
+  margin: 1em;
+  background-color: rgb(223, 28, 28);
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgb(187, 26, 26);
+  border-radius: 5px;
+  box-shadow: 5px 5px rgba(59, 58, 58, 0.39);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-reset {
+  padding: 0.5em;
+  margin: 1em;
+  background-color: rgb(28, 135, 223);
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgb(26, 155, 187);
+  border-radius: 5px;
+  box-shadow: 5px 5px rgba(59, 58, 58, 0.39);
+  cursor: pointer;
+  user-select: none;
+}
+
+.play-container {
+  padding: 3em;
+  border: 1px solid lightgray;
+  margin-bottom: 1em;
+
+  input {
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+}
+
+.dangerzone {
+  background-color: red;
+  border: 14px solid black;
+}
+.active {
+  background-color: lightsalmon;
+  border: 14px solid rgba(255, 0, 0, 0.521);
+}
+.notactive {
+  background-color: rgb(49, 180, 255);
+  border: none;
+}

@@ -1,0 +1,111 @@
+<h1>Welcome</h1>
+
+<!-- Typical one-way binding -->
+<!-- clickCounter is a var defined in the
+    home.component.ts module and is initalized 
+    with the value 0. When called with string 
+    interpolation the intial value of the clickCounter
+    is displayed.
+-->
+<div class="play-container">
+  <h3>One-way data binding</h3>
+  <p>
+    You've clicked
+    <button class="btn-click" (click)="countClick()">This Button</button>
+    {{ clickCounter }} times.
+    <!-- Strig interpolation -->
+    <button class="btn-reset" (click)="resetClick()">Reset</button>
+  </p>
+  <p></p>
+</div>
+
+<!-- Two-way binding -->
+<!-- In Angular the ngModel allows for two-way binding of data 
+    In our case the input property is going to receive 
+    and send data from the Home component logic(home.component.ts)
+
+-->
+<div class="play-container">
+  <h3>Two-way data binding</h3>
+  <input type="text" [(ngModel)]="name" placeholder="{{ holder }}" />
+  <br />
+  <strong>You said: </strong> {{ name }}
+</div>
+
+<!-- Ng Template -->
+
+<div class="play-container">
+  <h3>Ng Template</h3>
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+    <p>The click coutner <strong>is greater </strong> than 4.</p>
+  </ng-template>
+
+  <ng-template #none>
+    <p>The click counter <strong>is less</strong> an 4.</p>
+  </ng-template>
+</div>
+
+<!-- ng class -->
+<div class="play-container" [ngClass]="setClasses()">
+  <h3>Multiple class binding</h3>
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+    <p>The click coutner <strong>is greater </strong> than 4.</p>
+  </ng-template>
+
+  <ng-template #none>
+    <p>The click counter <strong>is less</strong> an 4.</p>
+  </ng-template>
+</div>
+
+<!-- Single class binding -->
+<div class="play-container" [class.dangerzone]="clickCounter > 4">
+  <h3>Single class binding</h3>
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+    <p>The click coutner <strong>is greater </strong> than 4.</p>
+  </ng-template>
+
+  <ng-template #none>
+    <p>The click counter <strong>is less</strong> an 4.</p>
+  </ng-template>
+</div>
+
+<!-- Singl Style binding -->
+<div
+  class="play-container"
+  [style.background-color]="
+    clickCounter > 4 ? 'lightblue' : clickCounter >= 3 ? 'yellow' : 'lightgray'
+  "
+>
+  <h3>Single Style Template</h3>
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+    <p>The click coutner <strong>is greater </strong> than 4.</p>
+  </ng-template>
+
+  <ng-template #none>
+    <p>The click counter <strong>is less</strong> an 4.</p>
+  </ng-template>
+</div>
+
+<!-- ng style -->
+<div
+  class="play-container"
+  [ngStyle]="{
+    'background-color':
+      clickCounter > 4 ? 'red' : clickCounter >= 3 ? 'yellow' : 'lightgray',
+    'box-shadow':
+      clickCounter > 4
+        ? '10px 10px rgb(59, 58, 58, 0.40)'
+        : clickCounter >= 3
+        ? '5px 5px rgb(59, 58, 58, 0.40)'
+        : none
+  }"
+>
+  <h3>Multiple Style Template</h3>
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+    <p>The click coutner <strong>is greater </strong> than 4.</p>
+  </ng-template>
+
+  <ng-template #none>
+    <p>The click counter <strong>is less</strong> an 4.</p>
+  </ng-template>
+</div>
